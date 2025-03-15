@@ -1,0 +1,11 @@
+{{ define "content" }}
+<h1>Отзывы</h1>
+<div class="reviews-list">
+    {{ range .Reviews }}
+        <div class="review-card">
+            <h3>{{ .Author }}</h3>
+            <p>{{ .Text }}</p>
+        </div>
+    {{ end }}
+</div>
+{{ end }}

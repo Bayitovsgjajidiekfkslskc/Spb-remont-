@@ -1,0 +1,22 @@
+{{ define "content" }}
+<h1>Портфолио</h1>
+{{ range .Projects }}
+    <div class="project-card">
+        <h2>{{ .Name }}</h2>
+        <p>{{ .Description }}</p>
+        <div class="project-images">
+            {{ range .Images }}
+                <img src="{{ . }}" alt="Project Image">
+            {{ end }}
+        </div>
+        <div class="project-videos">
+            {{ range .Videos }}
+                <video width="320" height="240" controls>
+                    <source src="{{ . }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}
+{{ end }}

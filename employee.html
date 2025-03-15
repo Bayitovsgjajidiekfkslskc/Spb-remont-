@@ -1,0 +1,13 @@
+{{ define "content" }}
+<h1>Сотрудники</h1>
+<div class="employees-list">
+    {{ range .Employees }}
+        <div class="employee-card">
+            <img src="{{ .Image }}" alt="{{ .FirstName }} {{ .LastName }}">
+            <h3><a href="/employee/{{.ID}}">{{ .FirstName }} {{ .LastName }}</a></h3>
+            <p>{{ .Position }}</p>
+            <p>{{ .Description }}</p>
+        </div>
+    {{ end }}
+</div>
+{{ end }}

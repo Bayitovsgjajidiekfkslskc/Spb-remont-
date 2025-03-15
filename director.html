@@ -1,0 +1,9 @@
+{{ define "content" }}
+<h1>Директор</h1>
+<div class="director-card">
+    <img src="{{ .Director.Image }}" alt="{{ .Director.FirstName }} {{ .Director.LastName }}">
+    <h3>{{ .Director.FirstName }} {{ .Director.LastName }}</h3>
+    <p>{{ .Director.Position }}</p>
+    <p>{{ .Director.Description }}</p>
+</div>
+{{ end }}

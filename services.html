@@ -1,0 +1,22 @@
+{{ define "content" }}
+<h1>Услуги</h1>
+<div class="services-list">
+    {{ range .Services }}
+        <div class="service-card">
+            <h3>{{ .Name }}</h3>
+            <p>{{ .Description }}</p>
+            <p>Цена: {{ .Price }}</p>
+        </div>
+    {{ end }}
+</div>
+{{ if .PrevPage }}
+    <div class="pagination">
+        <a href="/services?page={{ .PrevPage }}">Предыдущая страница</a>
+    </div>
+{{ end }}
+{{ if .NextPage }}
+    <div class="pagination">
+        <a href="/services?page={{ .NextPage }}">Следующая страница</a>
+    </div>
+{{ end }}
+{{ end }}
