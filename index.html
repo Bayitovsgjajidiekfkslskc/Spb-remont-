@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body>
+    {{ partial "header.html" . }}
+    
+    <main>
+        <section class="hero">
+            <h1>{{ .Params.hero.title }}</h1>
+            <a href="{{ .Params.hero.button_link }}" class="btn">{{ .Params.hero.button_text }}</a>
+        </section>
+
+        <div class="container">
+            {{ .Content }}
+            
+            <section class="services-preview">
+                <h2>Наши услуги</h2>
+                <div class="service-cards">
+                    {{ range first 3 (where .Site.Pages "Section" "services") }}
+                        <div class="card">
+                            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                            <p>{{ .Description }}</p>
+                        </div>
+                    {{ end }}
+                </div>
+            </section>
+        </div>
+    </main>
+
+    {{ partial "footer.html" . }}
+</body>
+</html>

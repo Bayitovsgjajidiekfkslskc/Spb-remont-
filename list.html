@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="container">
+    <h1>{{ .Title }}</h1>
+    
+    <div class="portfolio-grid">
+        {{ range .Pages }}
+        <div class="project-card">
+            {{ with .Resources.GetMatch "cover.jpg" }}
+                <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
+            {{ end }}
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Description }}</p>
+            <a href="{{ .RelPermalink }}" class="btn">Подробнее</a>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
