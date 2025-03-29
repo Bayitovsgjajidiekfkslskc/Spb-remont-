@@ -1,0 +1,24 @@
+baseURL = "https://spb-remont.netlify.app/"
+languageCode = "ru-ru"
+title = "SPB Ремонт"
+theme = "my-theme"
+
+[params]
+  company = "SPB Ремонт"
+  phone = "+7 (812) 123-45-67"
+  address = "Санкт-Петербург, ул. Строителей, 1"
+  email = "info@spb-remont.ru"
+
+[menu]
+  [[menu.main]]
+    name = "Главная"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Услуги"
+    url = "/services/"
+    weight = 2
+  [[menu.main]]
+    name = "Портфолио"
+    url = "/portfolio/"
+    weight = 3
